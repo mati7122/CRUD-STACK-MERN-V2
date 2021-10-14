@@ -1,7 +1,7 @@
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 //Components
 import Error from './404Error';
-import { Home } from './Home';
+import Home from './Home';
 import AddUser from './Add';
 //Images
 import add from '../assets/add-user.png'
@@ -18,7 +18,6 @@ function Router() {
                     <AddUser name="Add user" img={add} value="Add" message="User added successfully"/>
                 </Route>
                 <Route path="/update">
-                    {/* <Update/> */}
                     <AddUser name="Update" img={update} value="Update" message="User data updated"/>
                 </Route>
                 <Route path="*">

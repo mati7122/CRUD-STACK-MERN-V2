@@ -6,7 +6,7 @@ import phone from '../assets/call.png';
 import ubication from '../assets/place.png';
 import Delete from '../assets/remove.svg';
 
-export default function Item() {
+export default function Item(props) {
 
     function Alert(){
         Swal.fire({
@@ -30,22 +30,22 @@ export default function Item() {
 
             <img className="item-picture" src={defaultPhoto} alt="default"/>
 
-            <h4>Matías Herrera</h4>
+            <h4>{props.name}</h4>
 
             <div>
                 <div className="item-contact">
                     <img className="item-img" src={ubication} alt="user"/>
-                    <span>Argentina, Bs As</span>
+                    <span>{props.location}</span>
                 </div>
 
                 <h4>Contact</h4>
                 <div className="item-contact">
                     <img className="item-img" src={phone} alt="phone-img"/>
-                    <span>1125815630</span>
+                    <span>{props.number}</span>
                 </div>
                 <div className="item-contact">
                     <img className="item-img" src={email} alt="email-img"/>
-                    <span>matias7122@gmail.com</span>
+                    <span>{props.email}</span>
                 </div>
             </div>
 
