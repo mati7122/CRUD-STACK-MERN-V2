@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Item from "./Item";
 import axios from "axios";
 import useSWR from "swr";
+import Loader from "./Loader";
 
 const uri = "https://api-crud-stack-mern.herokuapp.com/api/get-data"
 
@@ -23,17 +24,22 @@ function Home() {
 
             {
                 !data &&
-                <span>Loading</span>
+                <div style={{height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                    <Loader/>
+                </div>
             }
 
             {
                 data &&
-                // JSON.stringify(data)
-                data.map(i => {
-                    return (
-                        <Item name={i.name} location={i.location} number={i.number} email={i.email} key={i.id}/>
-                    );
-                })
+
+                <div className="container-item">
+                    {
+                        data.map(i => {
+                            return (
+                                <Item name={i.name} location={i.location} number={i.number} email={i.email} id={i._id} />
+                            );
+                        })}
+                </div>
             }
 
         </div>

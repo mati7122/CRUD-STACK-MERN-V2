@@ -17,7 +17,7 @@ function Router() {
                 <Route path="/add">
                     <AddUser name="Add user" img={add} value="Add" message="User added successfully"/>
                 </Route>
-                <Route path="/update">
+                <Route path="/update/:id">
                     <AddUser name="Update" img={update} value="Update" message="User data updated"/>
                 </Route>
                 <Route path="*">
